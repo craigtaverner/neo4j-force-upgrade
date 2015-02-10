@@ -34,6 +34,7 @@ function downloadAndUpgrade {
       echo "Failed to download $archive"
       return -1
     fi
+    cp $archive $archive.backup_$(date +%Y%m%d%H%M)
     echo "Unpacking $archive to $name/$dbdir"
     (
       cd $name
